@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeIt</title>
+	<script src="https://use.fontawesome.com/175ed84f2f.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="feed" ng-app="myApp" ng-controller="myCtrl">
+		<div class="post" ng-repeat="x in posts">
+			<div class="header">
+				<div class="icon">
+					<img src="https://bit.ly/2WQwgJo" />
+				</div>
+				<div class="name">
+					<div class="username">AlphaBetaGamma</div>
+					<div class="tags">
+						<div class="tag">C++</div>
+						<div class="tag">JS</div>
+						<div class="tag">HTML</div>
+						<div class="tag">CSS</div>
+						<div class="tag">Python</div>
+					</div>
+				</div>
+				<div class="archive">
+					<i class="fa fa-star-o"></i>
+				</div>
+			</div>
+			<div class="main">
+				<div class="view">
+					<img src="https://bit.ly/3bvGlkj" />
+				</div>
+			</div>
+			<div class="footer">
+				<div class="plus">
+					<i class="fa fa-plus"></i>
+				</div>
+				<div class="minus">
+					<i class="fa fa-minus"></i>
+				</div>
+				<div class="comment">
+					<i class="fa fa-comment-o"></i>
+				</div>
+				<div class="share">
+					<i class="fa fa-share"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
