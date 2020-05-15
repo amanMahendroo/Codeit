@@ -1,10 +1,11 @@
 :root {
-	--back: #000;
-	--feed: #000;
-	--post: #000;
-	--test: #222;
-	--text: #fff;
-	--tag: #ff0;
+	--back: #fff;
+	--feed: #fff;
+	--post: #fff;
+	--test: #eee;
+	--text: #000;
+	--tag: #a00;
+	--star: #ff0;
 }
 
 body {
@@ -16,8 +17,10 @@ body {
 .feed {
 	background: var(--feed);
 	width: 700px;
+	position: absolute;
 	top: 0;
-	margin: auto;
+	left: calc(50vw);
+	transform: translateX(-50%);
 }
 
 .post {
@@ -70,10 +73,11 @@ body {
 
 .post .header .tags .tag {
 	display: inline-block;
-	border: 1px solid var(--tag);
+	/*border: 1px solid var(--tag);*/
 	color: var(--tag);
 	border-radius: 5px;
-	padding: 0 3px;
+	padding: 0 3px 0 0;
+	margin: 0 3px 0 0;
 }
 
 .post .header .archive {
@@ -86,19 +90,22 @@ body {
 
 .post .main {
 	width: 100%;
-	height: 400px; /* 16:9 ratio */
+	height: auto;
+	max-height: 400px;
+	overflow: hidden;
 }
 
 .post .main .view {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 .post .main .view img {
-	width: auto;
+	max-width: 100%;
+	max-height: 400px;
 	transform: translateX(-50%);
 	margin-left: calc(50%);
-	height: 100%;
+	/*height: auto;*/
 }
 
 .post .footer {
@@ -118,6 +125,10 @@ body {
 	transition: .25s all ease;
 }
 
+.post .footer div i, .post .header div i, .post .header .icon, .post .header .username, .post .main .view {
+	cursor: pointer;
+}
+
 .plus-clicked { color: #0f0; }
 .minus-clicked { color: #f00; }
-.star-clicked { color: var(--tag) }
+.star-clicked { color: var(--star); }
