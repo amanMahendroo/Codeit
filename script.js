@@ -12,5 +12,5 @@ $(document).ready(function () {
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
-    $scope.posts = [new Post(new User("https://bit.ly/2WQwgJo", "AlphaBeta"), "https://bit.ly/35Yol0S", ["HTML", "CSS", "JS"])]
+    $scope.posts = []
 });

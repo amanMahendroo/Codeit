@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+	display: none;
+}
+
 :root {
 	--back: #fff;
 	--feed: #fff;
@@ -8,10 +12,103 @@
 	--star: #ff0;
 }
 
+progress::-webkit-progress-bar {
+	background-color: var(--test);
+}
+
+progress::-webkit-progress-value {
+	background-color: #005;
+	border-radius: 2.5px;
+}
+
 body {
 	margin: auto;
+	font-family: Segoe UI;
 	background: var(--back);
 	user-select: none;
+}
+
+.container {
+	display: flex;
+	width: 100vw;
+}
+
+.account {
+	width: calc(50vw - 350px);
+	height: 100vh;
+	background: var(--test);
+	position: fixed;
+}
+
+.account .main {
+	border-bottom: 1px solid #999;
+}
+
+.account .main .name {
+	font-size: 3em;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 20px;
+	overflow: hidden;
+}
+
+.account .main .pfp {
+	height: 250px;
+	/*background: #555;*/
+}
+
+.account .main .pfp img {
+	height: 210px;
+	width: auto;
+	margin: 20px auto;
+	border-radius: 50%;
+	/*border: 1px solid #000;*/
+}
+
+.account .main .name .edit {
+	float: right;
+}
+
+.account .sub {
+	height: calc(100vh - 350px);
+	overflow-y: scroll;
+}
+
+.account .sub > div {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	cursor: pointer;
+	transition: .25s all ease;
+}
+
+.account .sub .open {
+	float: right;
+	font-size: 2em;
+}
+
+.account .sub .age {
+	text-align: right;
+	font-style: italic;
+}
+
+.account .sub .arch:hover {
+	background: #999;
+}
+
+.account .sub .own:hover {
+	background: #999;
+}
+
+.account .main .pfp {
+	text-align: center;
+}
+
+.account .pref progress {
+	width: calc(100% - 40px);
+	height: 5px;
+	appearance: none;
+	-webkit-appearance: none;
 }
 
 .feed {
@@ -21,6 +118,52 @@ body {
 	top: 0;
 	left: calc(50vw);
 	transform: translateX(-50%);
+}
+
+.feed .new {
+	width: 100%;
+	height: 100px;
+	background: var(--test);
+	display: flex;justify-content: space-around;
+}
+
+.feed .new div {
+	width: 25%;
+	height: 100px;
+	line-height: 100px;
+	font-size: 3em;
+	text-align: center;
+	cursor: pointer;
+	transition: .25s all ease;
+}
+
+.feed .new div:hover {
+	color: #777;
+}
+
+.feed .empty {
+	width: 100%;
+	height: 500px;
+	/*background: var(--test);*/
+}
+
+.feed .empty .content {
+	width: 100%;
+	height: 200px;
+	/*background: #000;*/
+	position: absolute;
+	margin-top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	color: #555;
+}
+
+.feed .empty .content .icon {
+	font-size: 5em;
+}
+
+.feed .empty .content .text {
+	font-size: 1.5em;
 }
 
 .post {
@@ -56,7 +199,6 @@ body {
 .post .header .name {
 	height: 50px;
 	width: calc(100% - 100px);
-	font-family: Segoe UI;
 }
 
 .post .header .username {
@@ -67,10 +209,9 @@ body {
 
 .post .header .tags {
 	display: inline-block;
-	font-family: Segoe UI;
 	font-size: .8em;
 }
-
+	
 .post .header .tags .tag {
 	display: inline-block;
 	/*border: 1px solid var(--tag);*/
@@ -129,6 +270,100 @@ body {
 	cursor: pointer;
 }
 
+.extra {
+	width: calc(50vw - 350px);
+	height: 100vh;
+	background: var(--test);
+	position: fixed;
+	right: 0;
+}
+
+.extra .trending {
+	height: calc(100vh - 450px);
+	overflow-y: scroll;
+	border-bottom: 1px solid #999;
+}
+
+.extra .heading {
+	font-size: 1.7em;
+	overflow: hidden;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 20px;
+}
+
+.extra .trending .item {
+	padding: 20px;
+	font-size: 1.5em;
+	line-height: 50px;
+	transition: .25s all ease;
+	cursor: pointer;
+}
+
+.extra .trending .item img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: right;
+}
+
+.extra .trending .item:hover {
+	background: #999;
+}
+
+.extra .events {
+	height: 250px;
+	width: auto;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	overflow-x: scroll;
+	display: flex;
+	padding-right: 10px;
+}
+
+.extra .events .item {
+	flex-shrink: 0;
+	width: 150px;
+	height: 230px;
+	color: #fff;
+	margin: 10px 0 10px 10px;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.extra .events .item .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(transparent, #000a);
+	z-index: 50;
+}
+
+.extra .events .item img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.extra .events .item .desc {
+	/*background: #999;*/
+	position: absolute;
+	bottom: 0;
+	height: 40px;
+	line-height: 40px;
+	/*width: 100%;*/
+	margin: 0 10px;
+	z-index: 100;
+}
+
+.extra .events .item .desc i {
+	color: #0f0;
+}
+
+.fa-fire { color: #f80; }
 .plus-clicked { color: #0f0; }
 .minus-clicked { color: #f00; }
 .star-clicked { color: var(--star); }
