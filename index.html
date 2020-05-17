@@ -3,6 +3,7 @@
 <head>
 	<title>CodeIt</title>
 	<script src="https://use.fontawesome.com/175ed84f2f.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="script.js"></script>
@@ -22,7 +23,7 @@
 				</div>
 			</div>
 			<div class="sub">
-				<div class="age">...been around since 324 days</div>
+				<div class="age">...been around for 324 days</div>
 				<div class="arch">Archives
 					<div class="open"><i class="fa fa-angle-right"></i></div>
 				</div>
@@ -40,10 +41,22 @@
 		</div>
 		<div class="feed">
 			<div class="new">
-				<div class="add"><i class="fa fa-plus"></i></div>
-				<div class="code"><i class="fa fa-code"></i></div>
-				<div class="search"><i class="fa fa-search"></i></div>
-				<div class="term"><i class="fa fa-terminal"></i></div>
+				<div class="add">
+					<div class="hover"></div>
+					<i class="fa fa-plus"></i>
+				</div>
+				<div class="code">
+					<div class="hover"></div>
+					<i class="fa fa-code"></i>
+				</div>
+				<div class="search">
+					<div class="hover"></div>
+					<i class="fa fa-search"></i>
+				</div>
+				<div class="term">
+					<div class="hover"></div>
+					<i class="fa fa-terminal"></i>
+				</div>
 			</div>
 			<div class="empty">
 				<div class="content">
@@ -55,7 +68,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="post" ng-repeat="x in posts">
+			<!-- <div class="post" ng-repeat="x in posts">
 				<div class="header">
 					<div class="icon">
 						<img ng-src="{{x.user.pfp}}" />
@@ -89,7 +102,7 @@
 						<i class="fa fa-share"></i>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class="extra">
 			<div class="heading">See what's trending <i class="fa fa-fire"></i> ...</div>
@@ -107,9 +120,6 @@
 					<img src="https://bit.ly/3cBMHjj">
 				</div>
 				<div class="item">Post 5
-					<img src="https://bit.ly/3cBMHjj">
-				</div>
-				<div class="item">Post 6
 					<img src="https://bit.ly/3cBMHjj">
 				</div>
 			</div>

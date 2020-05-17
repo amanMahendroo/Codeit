@@ -2,30 +2,38 @@
 	display: none;
 }
 
-:root {
+/*:root {
 	--back: #fff;
-	--feed: #fff;
-	--post: #fff;
-	--test: #eee;
+	--shade: #eee;
+	--hover: #ddd;
+	--theme: #a00;
 	--text: #000;
-	--tag: #a00;
-	--star: #ff0;
+}*/
+
+:root {
+	--back: #000;
+	--shade: #111;
+	--hover: #222;
+	--theme: #a00;
+	--text: #fff;
 }
 
 progress::-webkit-progress-bar {
-	background-color: var(--test);
+	background-color: var(--shade);
 }
 
 progress::-webkit-progress-value {
-	background-color: #005;
+	background-color: var(--theme);
 	border-radius: 2.5px;
 }
 
 body {
 	margin: auto;
-	font-family: Segoe UI;
+	font-family: 'Roboto', sans-serif;
 	background: var(--back);
 	user-select: none;
+	color: var(--text);
+	font-weight: lighter;
 }
 
 .container {
@@ -36,7 +44,7 @@ body {
 .account {
 	width: calc(50vw - 350px);
 	height: 100vh;
-	background: var(--test);
+	background: var(--shade);
 	position: fixed;
 }
 
@@ -54,7 +62,6 @@ body {
 
 .account .main .pfp {
 	height: 250px;
-	/*background: #555;*/
 }
 
 .account .main .pfp img {
@@ -62,7 +69,6 @@ body {
 	width: auto;
 	margin: 20px auto;
 	border-radius: 50%;
-	/*border: 1px solid #000;*/
 }
 
 .account .main .name .edit {
@@ -93,11 +99,11 @@ body {
 }
 
 .account .sub .arch:hover {
-	background: #999;
+	background: var(--hover);
 }
 
 .account .sub .own:hover {
-	background: #999;
+	background: var(--hover);
 }
 
 .account .main .pfp {
@@ -112,7 +118,7 @@ body {
 }
 
 .feed {
-	background: var(--feed);
+	background: var(--back);
 	width: 700px;
 	position: absolute;
 	top: 0;
@@ -123,39 +129,61 @@ body {
 .feed .new {
 	width: 100%;
 	height: 100px;
-	background: var(--test);
-	display: flex;justify-content: space-around;
+	background: var(--shade);
+	display: flex;
+	justify-content: space-around;
 }
 
-.feed .new div {
+.feed .new > div {
 	width: 25%;
 	height: 100px;
 	line-height: 100px;
 	font-size: 3em;
 	text-align: center;
 	cursor: pointer;
+	position: relative;
+	top: -100%;
 	transition: .25s all ease;
+	background: transparent;
+	/*overflow: hidden;*/
 }
 
-.feed .new div:hover {
-	color: #777;
+.feed .new div i {
+	position: relative;
+	z-index: 100;
+}
+
+.feed .new > div:hover {
+	color: var(--hover);
+}
+
+.feed .new > div .hover {
+	width: 100%;
+	height: 100%;
+	background: var(--text);
+	position: relative;
+	top: 0;
+	transition: .1s all ease;
+	/*z-index: -100;*/
+}
+
+.feed .new > div:hover .hover {
+	top: 100%;
 }
 
 .feed .empty {
 	width: 100%;
 	height: 500px;
-	/*background: var(--test);*/
 }
 
 .feed .empty .content {
 	width: 100%;
 	height: 200px;
-	/*background: #000;*/
 	position: absolute;
 	margin-top: 50%;
 	transform: translateY(-50%);
 	text-align: center;
-	color: #555;
+	/*color: var(--shade);*/
 }
 
 .feed .empty .content .icon {
@@ -169,8 +197,7 @@ body {
 .post {
 	width: 680px;
 	margin: 10px;
-	background: var(--post);
-	color: var(--text);
+	background: var(--back);
 }
 
 .post .header {
@@ -179,7 +206,7 @@ body {
 	top: 0;
 	height: 50px;
 	display: flex;
-	background: var(--test);
+	background: var(--shade);
 }
 
 .post .header .icon {
@@ -203,7 +230,6 @@ body {
 
 .post .header .username {
 	font-size: 1.3em;
-	/*line-height: 80%;*/
 	margin-bottom: -3px;
 }
 
@@ -214,8 +240,7 @@ body {
 	
 .post .header .tags .tag {
 	display: inline-block;
-	/*border: 1px solid var(--tag);*/
-	color: var(--tag);
+	color: #f00;
 	border-radius: 5px;
 	padding: 0 3px 0 0;
 	margin: 0 3px 0 0;
@@ -246,7 +271,6 @@ body {
 	max-height: 400px;
 	transform: translateX(-50%);
 	margin-left: calc(50%);
-	/*height: auto;*/
 }
 
 .post .footer {
@@ -254,7 +278,7 @@ body {
 	display: flex;
 	justify-content: space-around;
 	height: 50px;
-	background: var(--test);
+	background: var(--shade);
 }
 
 .post .footer div {
@@ -273,7 +297,7 @@ body {
 .extra {
 	width: calc(50vw - 350px);
 	height: 100vh;
-	background: var(--test);
+	background: var(--shade);
 	position: fixed;
 	right: 0;
 }
@@ -308,7 +332,7 @@ body {
 }
 
 .extra .trending .item:hover {
-	background: #999;
+	background: var(--hover);
 }
 
 .extra .events {
@@ -338,7 +362,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(transparent, #000a);
+	background: linear-gradient(transparent, #000c);
 	z-index: 50;
 }
 
@@ -349,12 +373,10 @@ body {
 }
 
 .extra .events .item .desc {
-	/*background: #999;*/
 	position: absolute;
 	bottom: 0;
 	height: 40px;
 	line-height: 40px;
-	/*width: 100%;*/
 	margin: 0 10px;
 	z-index: 100;
 }

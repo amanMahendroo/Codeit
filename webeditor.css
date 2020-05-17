@@ -1,0 +1,79 @@
+/*:root {
+	--back: #eee;
+	--shade: #ddd;
+	--hover: #ccc;
+	--active: #bbb;
+	--text: #000;
+}*/
+
+:root {
+	--back: #000;
+	--shade: #111;
+	--hover: #222;
+	--active: #333;
+	--text: #fff;
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+}
+
+.code {
+	width: 50%;
+	color: var(--text);
+}
+
+.code .htm, .code .css, .code .js {
+	font-family: Courier new;
+	width: calc(50% - 20px);
+	height: calc(100% - 50px);
+	position: absolute;
+	bottom: 0;
+	background: var(--back);
+	padding: 0 10px;
+	line-height: 30px;
+	outline: none;
+}
+
+.buttons {
+	background: var(--shade);
+	height: 50px;
+	user-select: none;
+}
+
+.buttons div {
+	display: inline-block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	width: 150px;
+	text-align: center;
+	cursor: pointer;
+	transition: .25s all ease;
+	font-style: italic;
+}
+
+.buttons div:hover {
+	background: var(--hover);
+}
+
+.buttons .active {
+	background: var(--active);
+}
+
+.buttons .view {
+	float: right;
+	width: 75px;
+	clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+}
+
+.output {
+	width: 50%;
+}
