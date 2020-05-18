@@ -2,20 +2,18 @@
 	display: none;
 }
 
-/*:root {
-	--back: #fff;
-	--shade: #eee;
-	--hover: #ddd;
-	--theme: #a00;
-	--text: #000;
-}*/
-
 :root {
 	--back: #000;
+	--shadow: #0003;
 	--shade: #111;
 	--hover: #222;
 	--theme: #a00;
 	--text: #fff;
+	--star: #cc0;
+}
+
+.nav {
+	display: none;
 }
 
 progress::-webkit-progress-bar {
@@ -46,6 +44,7 @@ body {
 	height: 100vh;
 	background: var(--shade);
 	position: fixed;
+	overflow-y: hidden;
 }
 
 .account .main {
@@ -122,16 +121,22 @@ body {
 	width: 700px;
 	position: absolute;
 	top: 0;
-	left: calc(50vw);
-	transform: translateX(-50%);
+	left: calc(50vw - 350px);
+}
+
+.feed .empty {
+	display: none;
 }
 
 .feed .new {
-	width: 100%;
+	position: fixed;
+	z-index: 100;
+	width: 700px;
 	height: 100px;
 	background: var(--shade);
 	display: flex;
 	justify-content: space-around;
+	top: 0;
 }
 
 .feed .new > div {
@@ -150,7 +155,7 @@ body {
 
 .feed .new div i {
 	position: relative;
-	z-index: 100;
+	z-index: 120;
 }
 
 .feed .new > div:hover {
@@ -192,6 +197,14 @@ body {
 
 .feed .empty .content .text {
 	font-size: 1.5em;
+}
+
+.posts {
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	height: calc(100vh - 100px);
+	overflow-y: scroll;
 }
 
 .post {
@@ -237,7 +250,7 @@ body {
 	display: inline-block;
 	font-size: .8em;
 }
-	
+
 .post .header .tags .tag {
 	display: inline-block;
 	color: #f00;
@@ -300,6 +313,7 @@ body {
 	background: var(--shade);
 	position: fixed;
 	right: 0;
+	overflow-y: hidden;
 }
 
 .extra .trending {
@@ -378,14 +392,202 @@ body {
 	height: 40px;
 	line-height: 40px;
 	margin: 0 10px;
-	z-index: 100;
+	z-index: 60;
 }
 
 .extra .events .item .desc i {
 	color: #0f0;
 }
 
-.fa-fire { color: #f80; }
+.extra .fa-fire { color: #f80; }
 .plus-clicked { color: #0f0; }
 .minus-clicked { color: #f00; }
 .star-clicked { color: var(--star); }
+
+@media screen and (max-aspect-ratio: 1/1) {
+	body {
+		font-size: 2em;
+	}
+
+	.nav {
+		background: var(--shade);
+		position: fixed;
+		width: 100vw;
+		display: flex;
+		height: 200px;
+		line-height: 200px;
+		bottom: -10px;
+		left: 10px;
+		z-index: 100;
+		box-shadow: 0 5px 15px 5px var(--shadow);
+		font-size: 3em;
+	}
+
+	.nav div {
+		width: 33%;
+		text-align: center;
+	}
+
+	.container {
+		display: block;
+	}
+
+	.account {
+		width: 100vw;
+		left: 10px;
+	}
+
+	.account .main .name {
+		height: 200px;
+		line-height: 200px;
+		padding: 0 40px;
+	}
+
+	.account .main .pfp {
+		height: 500px;
+	}
+
+	.account .main .pfp img {
+		height: 480px;
+	}
+
+	.account .sub div {
+		height: 80px;
+		line-height: 80px;
+		font-size: 1.2em;
+	}
+
+	.extra {
+		position: absolute;
+		left: 0;
+		width: 100vw;
+		/*z-index: 80;*/
+	}
+
+	.extra .heading {
+		height: 200px;
+		line-height: 200px;
+	}
+
+	.extra .trending {
+		height: calc(100vh - 1100px);
+	}
+
+	.extra .trending .item {
+		height: 200px;
+		line-height: 200px;
+	}
+
+	.extra .trending .item img {
+		width: 200px;
+		height: 200px;
+	}
+
+	.extra .events {
+		height: 500px;
+		bottom: 200px;
+	}
+
+	.extra .events .item {
+		width: 300px;
+		height: 460px;
+		margin: 20px 0 20px 20px;
+		font-size: 1.2em;
+	}
+
+	.extra .events .item .desc {
+		height: 80px;
+		line-height: 80px;
+	}
+
+	.feed {
+		position: absolute;
+		left: 10px;
+		width: 100vw;
+		height: 100vh;
+		/*transform: translateX(0);*/
+		z-index: 80;
+	}
+
+	.feed .new {
+		height: 200px;
+		width: 100vw;
+		/*line-height: 200px;*/
+	}
+
+	.feed .new > div {
+		height: 200px;
+		top: 0;
+		line-height: 200px;
+
+	}
+
+	.feed .new > div .hover {
+		display: none;
+	}
+
+	.posts {
+		position: absolute;
+		top: 200px;
+		width: 100vw;
+		height: calc(100vh - 400px);
+		overflow-y: scroll;
+	}
+
+	.feed .post {
+		width: calc(100% - 20px);
+	}
+
+	.post .header {
+		height: 100px;
+		line-height: 100px;
+	}
+
+	.post .header .icon {
+		width: 100px;
+		height: 100px;
+	}
+
+	.post .header .icon img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.post .header .name {
+		height: 100px;
+	}
+
+	.post .header .name .username {
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: -25px;
+	}
+
+	.post .header .name .tags {
+		height: 50px;
+		line-height: 50px;
+	}
+
+	.post .header .archive {
+		width: 100px;
+		line-height: 100px;
+	}
+
+	.post .main {
+		max-height: 800px;
+	}
+
+	.post .main .view img {
+		max-height: 800px;
+	}
+
+	.post .footer {
+		height: 100px;
+		line-height: 100px;
+	}
+
+	.post .footer div {
+		height: 100px;
+		line-height: 100px;
+	}
+}

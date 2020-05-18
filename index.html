@@ -12,6 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<div class="nav">
+		<div class="ac"><i class="fa fa-user"></i></div>
+		<div class="fd"><i class="fa fa-home"></i></div>
+		<div class="xt"><i class="fa fa-fire"></i></div>
+	</div>
 	<div class="container" ng-app="myApp" ng-controller="myCtrl">
 		<div class="account">
 			<div class="main">
@@ -68,41 +73,43 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="post" ng-repeat="x in posts">
-				<div class="header">
-					<div class="icon">
-						<img ng-src="{{x.user.pfp}}" />
-					</div>
-					<div class="name">
-						<div class="username">{{x.user.name}}</div>
-						<div class="tags" ng-repeat="y in x.tags">
-							<div class="tag">{{y}}</div>
+			<div class="posts">
+				<div class="post" ng-repeat="x in posts">
+					<div class="header">
+						<div class="icon">
+							<img ng-src="https://bit.ly/2WQwgJo" />
+						</div>
+						<div class="name">
+							<div class="username">abc</div>
+							<div class="tags">
+								<div class="tag">C++</div>
+							</div>
+						</div>
+						<div class="archive">
+							<i class="fa fa-star-o"></i>
 						</div>
 					</div>
-					<div class="archive">
-						<i class="fa fa-star-o"></i>
+					<div class="main">
+						<div class="view">
+							<img ng-src="https://bit.ly/3bI3srK" />
+						</div>
+					</div>
+					<div class="footer">
+						<div class="plus">
+							<i class="fa fa-plus"></i>
+						</div>
+						<div class="minus">
+							<i class="fa fa-minus"></i>
+						</div>
+						<div class="comment">
+							<i class="fa fa-comment-o"></i>
+						</div>
+						<div class="share">
+							<i class="fa fa-share"></i>
+						</div>
 					</div>
 				</div>
-				<div class="main">
-					<div class="view">
-						<img ng-src="{{x.thumb}}" />
-					</div>
-				</div>
-				<div class="footer">
-					<div class="plus">
-						<i class="fa fa-plus"></i>
-					</div>
-					<div class="minus">
-						<i class="fa fa-minus"></i>
-					</div>
-					<div class="comment">
-						<i class="fa fa-comment-o"></i>
-					</div>
-					<div class="share">
-						<i class="fa fa-share"></i>
-					</div>
-				</div>
-			</div> -->
+			</div>
 		</div>
 		<div class="extra">
 			<div class="heading">See what's trending <i class="fa fa-fire"></i> ...</div>
