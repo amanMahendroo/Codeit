@@ -3,8 +3,7 @@ class Post {
 		this.id = getPostId()
 		this.userId = u
 		this.time = new Date()
-		this.likes = new Set()
-		this.dislikes = new Set()
+		this.points = 0
 		this.comments
 		this.content = new Content(th, t)
 	}

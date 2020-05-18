@@ -2,6 +2,8 @@ class User {
 	constructor(p, n, b) {
 		this.id = getUserId();
 		this.account = new Account(p, n, b)
+		this.liked = []
+		this.disliked = []
 		this.pref = new Preferences()
 		this.archives = []
 		this.own = []
