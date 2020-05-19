@@ -34,6 +34,10 @@ $(document).ready(function () {
 		$('.feed').css('z-index', 0)
 		$('.extra').css('z-index', 80)
 	})
+
+	$('.search').click(function () {
+		$('.new').toggleClass('new-search')
+	})
 })
 
 function colors() {

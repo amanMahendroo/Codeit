@@ -2,23 +2,15 @@ let result = '';
 
 $(document).ready(function () {
 	$('html, body').keypress(function (event) {
-		console.log(event)
 		if (event.which == 101) {
 			if ($('.output').hasClass('full')) {
 				$('.output').removeClass('full')
 				$('.output').addClass('editor')
 			}
 		}
-		setTimeout(function () {
-			let html = $('.htm').text()
-			let css = $('.css').text()
-			let js = $('.js').text()
-			let code = '<html><head></head><body><style scoped>' + css + '</style><script>' + js + '</script>' + html + '</body></html>'
-			result = $.parseHTML(code)
-			$('.output .view').empty()
-			$('.output .view').append(result)
-		}, 50)
 	})
+
+	setInterval(compile, 1000)
 
 	$('.buttons .view').click(function () {
 		$(this).toggleClass('opened')
@@ -70,6 +62,18 @@ $(document).ready(function () {
 		$('.htm, .css, .js').css('z-index', 0)
 		$('.js').css('z-index', 100)
 	})
-
-
 })
+
+function compile() {
+	let html = window.document.getElementById('htm')
+	let css = window.document.getElementById('css')
+	let js = window.document.getElementById('js')
+	let output = window.document.getElementById('view')
+
+	var document = output.contentDocument, style=document.createElement("style"), script=document.createElement("script");
+	document.body.innerHTML=html.textContent;
+	style.innerHTML=css.textContent.replace(/\s/g,"");
+	script.innerHTML=js.textContent;
+	document.body.appendChild(style);
+	document.body.appendChild(script);
+}
