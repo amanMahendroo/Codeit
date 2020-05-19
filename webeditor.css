@@ -76,6 +76,7 @@ body {
 	overflow: hidden;
 	transition: .25s all ease;
 	clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+	font-size: 1.2em;
 }
 
 .buttons .options {
@@ -101,9 +102,12 @@ body {
 }
 
 .output .view {
+	display: block;
 	background: #fff;
 	margin: auto;
 	transition: .25s all ease;
+	border: 0;
+	outline: 0;
 }
 
 .editor .view {
