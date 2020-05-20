@@ -1,0 +1,244 @@
+:root {
+	--back: #000;
+	--shade: #111;
+	--shade2: #222;
+	--text: #fff;
+	--fb: #3b5998;
+	--gl: #de5246;
+	--theme: #0f0;
+}
+
+body {
+	margin: 0;
+	user-select: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+.panel {
+	width: 40vw;
+	height: 100vh;
+	position: absolute;
+	right: 0;
+	background: var(--back);
+	color: var(--text);
+}
+
+.background-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.background-overlay .t1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff1;
+	width: 35vw;
+	height: 18vw;
+	clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.background-overlay .t2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #fff1;
+	width: 20vw;
+	height: 20vw;
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.background-overlay .t3 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: #fff1;
+	width: 40vw;
+	height: 15vw;
+	clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+}
+
+.register {
+	height: 100px;
+	line-height: 100px;
+	position: absolute;
+	bottom: 0;
+	text-align: right;
+	right: 0;
+	padding: 0 10%;
+}
+
+.register .reg {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--theme);
+	margin-left: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+.logins {
+	position: absolute;
+	top: 40vh;
+	width: 40vw;
+
+}
+
+.logins div {
+	width: 70%;
+	margin: 50px auto;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+.facebook { background: var(--fb) }
+.google { background: var(--gl) }
+
+.title {
+	position: absolute;
+	font-size: 2em;
+	letter-spacing: 3px;
+	padding: 20px;
+}
+
+.distract {
+	position: absolute;
+	width: 60vw;
+	height: 100vh;
+}
+
+.distract .image {
+	width: 100%;
+	height: 100%;
+
+}
+
+.distract .image img {
+	width: auto;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.distract .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: linear-gradient(to bottom right, #fff, transparent)
+}
+
+.second {
+	display: none;
+	position: absolute;
+	top: 40vh;
+	width: 100%;
+}
+
+.second input {
+	width: 80%;
+	margin: 25px 10%;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1.2em;
+	border-bottom: 1px solid var(--text);
+	color: var(--text);
+	font-family: 'Roboto', sans-serif;
+}
+
+input:focus-within {
+	border-bottom: 2px solid var(--text);
+
+}
+
+.second .submit {
+	width: 80%;
+	margin: 25px 10%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid var(--text);
+	text-align: center;
+	font-size: 1.2em;
+	z-index: 100;
+	cursor: pointer;
+	transition: .2s all ease;
+}
+
+.second .submit:hover {
+	color: var(--back);
+	background: var(--text);
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+	body {
+		font-size: 2em;
+	}
+
+	.distract {
+		display: none;
+	}
+
+	.panel {
+		width: 100%;
+		left: 0;
+	}
+
+	.title {
+		padding: 40px;
+	}
+
+	.register {
+		height: 200px;
+		line-height: 200px;
+	}
+
+	.background-overlay .t1 {
+		width: 87.5vw;
+		height: 45vw;
+	}
+
+	.background-overlay .t2 {
+		width: 50vw;
+		height: 50vw;
+	}
+
+	.background-overlay .t3 {
+		width: 100vw;
+		height: 37.5vw;
+	}
+
+	.logins {
+		width: 100vw;
+	}
+
+	.logins div {
+		height: 100px;
+		line-height: 100px;
+		margin: 100px auto;
+	}
+
+	.second input {
+		height: 60px;
+		line-height: 60px;
+		font-size: 1.2em;
+		border-bottom: 2px solid #fff;
+	}
+
+	.second input:focus-within {
+		border-bottom: 4px solid #fff;
+	}
+
+	.second .submit {
+		height: 80px;
+		line-height: 80px;
+		margin-top: 50px;
+	}
+}
