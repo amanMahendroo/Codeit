@@ -30,6 +30,10 @@ body {
 	color: var(--text);
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .code .htm, .code .css, .code .js {
 	font-family: Courier new;
 	width: calc(50% - 20px);
@@ -40,6 +44,7 @@ body {
 	padding: 0 10px;
 	line-height: 30px;
 	outline: none;
+	overflow-y: scroll;
 }
 
 .buttons {

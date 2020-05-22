@@ -2,16 +2,6 @@
 	display: none;
 }
 
-:root {
-	--back: #000;
-	--shadow: #0003;
-	--shade: #111;
-	--hover: #222;
-	--theme: #a00;
-	--text: #fff;
-	--star: #ee0;
-}
-
 .nav {
 	display: none;
 }
@@ -170,6 +160,7 @@ body {
 	width: 85%;
 	padding: 0 25px;
 	font-size: .5em;
+	font-family: 'Roboto', sans-serif;
 }
 
 .new-search .bar {

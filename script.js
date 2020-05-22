@@ -17,6 +17,10 @@ $(document).ready(function () {
 		window.location.href = "webeditor.html"
 	})
 
+	$('.feed .new .add').click(function () {
+		window.location.href = "editor.html"
+	})
+
 	$('.ac').click(function () {
 		$('.account').css('z-index', 80)
 		$('.feed').css('z-index', 0)

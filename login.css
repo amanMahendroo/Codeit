@@ -1,11 +1,10 @@
 :root {
 	--back: #000;
-	--shade: #111;
-	--shade2: #222;
+	--shade: #fff1;
 	--text: #fff;
 	--fb: #3b5998;
 	--gl: #de5246;
-	--theme: #0f0;
+	--theme: #0f6;
 }
 
 body {
@@ -29,31 +28,30 @@ body {
 	height: 100%;
 }
 
-.background-overlay .t1 {
+.background-overlay div {
 	position: absolute;
+	background: var(--shade);
+}
+
+.background-overlay .t1 {
 	top: 0;
 	left: 0;
-	background: #fff1;
 	width: 35vw;
 	height: 18vw;
 	clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 .background-overlay .t2 {
-	position: absolute;
 	top: 0;
 	right: 0;
-	background: #fff1;
 	width: 20vw;
 	height: 20vw;
 	clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
 .background-overlay .t3 {
-	position: absolute;
 	bottom: 0;
 	right: 0;
-	background: #fff1;
 	width: 40vw;
 	height: 15vw;
 	clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
@@ -94,6 +92,7 @@ body {
 	text-align: center;
 	font-size: 1.2em;
 	cursor: pointer;
+	color: #fff;
 }
 
 .facebook { background: var(--fb) }
@@ -130,7 +129,7 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 100;
-	background: linear-gradient(to bottom right, #fff, transparent)
+	background: linear-gradient(to bottom right, var(--text), transparent)
 }
 
 .second {
@@ -229,11 +228,11 @@ input:focus-within {
 		height: 60px;
 		line-height: 60px;
 		font-size: 1.2em;
-		border-bottom: 2px solid #fff;
+		border-bottom: 2px solid var(--text);
 	}
 
 	.second input:focus-within {
-		border-bottom: 4px solid #fff;
+		border-bottom: 4px solid var(--text);
 	}
 
 	.second .submit {

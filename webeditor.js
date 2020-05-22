@@ -10,7 +10,15 @@ $(document).ready(function () {
 		}
 	})
 
-	setInterval(compile, 1000)
+	$('.htm, .css, .js').keypress(function (event) {
+		setTimeout(compile, 100)
+	})
+
+	$('.htm, .css, .js').keypress(function (event) {
+		if (event.which == 9) {
+
+		}
+	})
 
 	$('.buttons .view').click(function () {
 		$(this).toggleClass('opened')
@@ -65,15 +73,27 @@ $(document).ready(function () {
 })
 
 function compile() {
-	let html = window.document.getElementById('htm')
-	let css = window.document.getElementById('css')
-	let js = window.document.getElementById('js')
+	let html = window.document.getElementById('htm').textContent
+	let css = window.document.getElementById('css').textContent.replace(/\s/g, "")
+	let js = window.document.getElementById('js').textContent
 	let output = window.document.getElementById('view')
+	let document = output.contentDocument, style = document.createElement("style"), script = document.createElement("script");
+	
+	window.document.getElementById('htm').innerHTML = neatHTML(html)
+	window.document.getElementById('css').innerHTML = neatCSS(css)
 
-	var document = output.contentDocument, style=document.createElement("style"), script=document.createElement("script");
-	document.body.innerHTML=html.textContent;
-	style.innerHTML=css.textContent.replace(/\s/g,"");
-	script.innerHTML=js.textContent;
+	document.body.innerHTML = html
+	style.innerHTML = css
+	script.innerHTML = js
 	document.body.appendChild(style);
 	document.body.appendChild(script);
+}
+
+function neatHTML(text) {
+	text = text.replace(/(<\/?)([a-zA-Z]+)(\s|[>])/igm, '$1<b>$2</b>$3');
+	return text
+}
+
+function neatCSS(text) {
+	
 }
