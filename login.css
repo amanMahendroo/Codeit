@@ -4,7 +4,8 @@
 	--text: #fff;
 	--fb: #3b5998;
 	--gl: #de5246;
-	--theme: #0f6;
+	--theme1: #4c96d7;
+	--theme2: #090e47;
 }
 
 body {
@@ -90,7 +91,7 @@ body {
 .register .reg {
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: var(--theme);
+	color: var(--theme1);
 	margin-left: 20px;
 	font-weight: bold;
 	cursor: pointer;
@@ -105,8 +106,8 @@ body {
 }
 
 .logins div {
-	width: 70%;
-	margin: 50px auto;
+	width: 35%;
+	margin: 25px 0 50px 10%;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
@@ -115,8 +116,41 @@ body {
 	color: #fff;
 }
 
-.facebook { background: var(--fb) }
-.google { background: var(--gl) }
+.logins input {
+	width: 80%;
+	margin: 25px 10%;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1.2em;
+	border-bottom: 1px solid var(--text);
+	color: var(--text);
+	font-family: 'Roboto', sans-serif;
+}
+
+.first .submit {
+	width: 80%;
+	margin: 25px 10%;
+	height: 40px;
+	line-height: 40px;
+	color: var(--text);
+	border: 1px solid var(--text);
+	text-align: center;
+	font-size: 1.2em;
+	z-index: 100;
+	cursor: pointer;
+	transition: .2s all ease;
+}
+
+.first .submit:hover {
+	color: var(--back);
+	background: var(--text);
+}
+
+.facebook { background: var(--fb); float: left; }
+.google { background: var(--gl); float: left; }
 
 .distract {
 	position: absolute;
@@ -150,6 +184,20 @@ body {
 	position: absolute;
 	top: 40vh;
 	width: 100%;
+}
+
+.second .back {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 3em;
+	z-index: 100;
+	color: var(--theme1);
+	cursor: pointer;
 }
 
 .second input {
@@ -236,9 +284,30 @@ input:focus-within {
 	}
 
 	.logins div {
-		height: 100px;
-		line-height: 100px;
-		margin: 100px auto;
+		height: 80px;
+		line-height: 80px;
+		margin: 100px 0 100px 10%;
+		font-size: 1em;
+	}
+
+	.first input {
+		height: 60px;
+		line-height: 60px;
+		font-size: 1.2em;
+		border-bottom: 2px solid var(--text);
+	}
+
+	.first .submit {
+		height: 80px;
+		line-height: 80px;
+		margin: 50px auto 0 auto;
+	}
+
+	.second .back {
+		/*left: 0;*/
+		height: 200px;
+		line-height: 200px;
+		width: 200px;
 	}
 
 	.second input {
