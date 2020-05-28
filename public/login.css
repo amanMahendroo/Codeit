@@ -1,0 +1,336 @@
+:root {
+	--back: #000;
+	--shade: #fff1;
+	--text: #fff;
+	--fb: #3b5998;
+	--gl: #de5246;
+	--theme1: #4c96d7;
+	--theme2: #090e47;
+}
+
+.panel {
+	width: 40vw;
+	height: calc(100vh + 8px);
+	position: absolute;
+	top: -8px;
+	right: 0;
+	background: var(--back);
+	color: var(--text);
+}
+
+
+.background-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.background-overlay div {
+	position: absolute;
+	background: var(--shade);
+}
+
+.logo {
+	position: absolute;
+	z-index: 100;
+	margin: auto;
+	width: 100%;
+	top: 10vh;
+	/*width: 150px;*/
+	height: 200px;
+}
+
+.logo img {
+	margin: auto;
+	height: 100%;
+	width: auto;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.background-overlay .t1 {
+	top: 0;
+	left: 0;
+	width: 35vw;
+	height: 18vw;
+	clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.background-overlay .t2 {
+	top: 0;
+	right: 0;
+	width: 20vw;
+	height: 20vw;
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.background-overlay .t3 {
+	bottom: 0;
+	right: 0;
+	width: 40vw;
+	height: 15vw;
+	clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+}
+
+.register {
+	height: 100px;
+	line-height: 100px;
+	position: absolute;
+	bottom: 0;
+	text-align: right;
+	right: 0;
+	padding: 0 10%;
+}
+
+.register .reg {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--theme1);
+	margin-left: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+.logins {
+	position: absolute;
+	top: 40vh;
+	width: 40vw;
+
+}
+
+.logins div {
+	width: 35%;
+	margin: 25px 0 50px 10%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.2em;
+	cursor: pointer;
+	color: #fff;
+}
+
+
+.logins input {
+	width: 80%;
+	margin: 25px 10%;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1.2em;
+	border-bottom: 1px solid var(--text);
+	color: var(--text);
+	font-family: 'Roboto', sans-serif;
+}
+
+.first .submit {
+	width: 80%;
+	margin: 25px 10%;
+	height: 40px;
+	line-height: 40px;
+	color: var(--text);
+	border: 1px solid var(--text);
+	text-align: center;
+	font-size: 1.2em;
+	z-index: 100;
+	cursor: pointer;
+	transition: .2s all ease;
+}
+
+.first .submit:hover {
+	color: var(--back);
+	background: var(--text);
+}
+
+.facebook { background: var(--fb); float: left; }
+.google { background: var(--gl); float: left; }
+
+.distract {
+	position: absolute;
+	top: -8px;
+	left: -8px;
+	width: calc(60vw + 8px);
+	height: calc(100vh + 8px);
+}
+
+.distract .image {
+	width: 100%;
+	height: 100%;
+
+}
+
+.distract .image img {
+	width: auto;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.distract .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: linear-gradient(to bottom right, var(--text), transparent)
+}
+
+.second {
+	display: none;
+	position: absolute;
+	top: 40vh;
+	width: 100%;
+}
+
+.second .back {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 3em;
+	z-index: 100;
+	color: var(--theme1);
+	cursor: pointer;
+}
+
+.second input {
+	width: 80%;
+	margin: 15px 10%;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1.2em;
+	border-bottom: 1px solid var(--text);
+	color: var(--text);
+	font-family: 'Roboto', sans-serif;
+}
+
+input:focus-within {
+	border-bottom: 2px solid var(--text);
+
+}
+
+.second .submit {
+	width: 80%;
+	margin: 25px 10%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid var(--text);
+	text-align: center;
+	font-size: 1.2em;
+	z-index: 100;
+	cursor: pointer;
+	transition: .2s all ease;
+}
+
+.second .submit:hover {
+	color: var(--back);
+	background: var(--text);
+}
+
+input#email:valid {
+	border-color: var(--theme1);
+}
+
+.second .analyse {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.second .analyse .req {
+	list-style-type: none;
+	padding: 0;
+	font-size: .9em;
+	line-height: 22px;
+}
+
+.second .analyse .req .correct {
+	color: var(--theme1);
+}
+
+.analyse .meter {
+	width: 100%;
+	display: flex;
+	height: 2px;
+	margin: 10px 0;
+}
+
+.analyse .meter .bar {
+	width: 20%;
+	margin-right: 10px;
+	height: 100%;
+	background: var(--text);
+}
+
+.analyse .meter .verif {
+	background: var(--theme1);
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+	.distract {
+		display: none;
+	}
+
+	.panel {
+		width: 100%;
+		left: 0;
+	}
+
+	.background-overlay .t1 {
+		width: 87.5vw;
+		height: 45vw;
+	}
+
+	.background-overlay .t2 {
+		width: 50vw;
+		height: 50vw;
+	}
+
+	.background-overlay .t3 {
+		width: 100vw;
+		height: 37.5vw;
+	}
+
+	.logo {
+		height: 200px;
+	}
+
+	.logins {
+		width: 100vw;
+	}
+
+
+	.first input {
+		height: 30px;
+		line-height: 30px;
+		font-size: 1.2em;
+		border-bottom: 1px solid var(--text);
+	}
+
+	.first .submit {
+		height: 40px;
+		line-height: 40px;
+		margin: 25px auto 0 auto;
+	}
+
+	.second input {
+		height: 30px;
+		line-height: 30px;
+		font-size: 1.2em;
+	}
+
+	.second .back {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+	}
+
+	.facebook, .google { font-size: .2em; }
+}
