@@ -1,0 +1,623 @@
+::-webkit-scrollbar {
+	display: none;
+}
+
+.nav {
+	display: none;
+}
+
+progress::-webkit-progress-bar {
+	background-color: var(--shade);
+}
+
+progress::-webkit-progress-value {
+	background-color: var(--theme);
+	border-radius: 2.5px;
+}
+
+body {
+	margin: auto;
+	font-family: 'Roboto', sans-serif;
+	background: var(--back);
+	user-select: none;
+	color: var(--text);
+	font-weight: lighter;
+}
+
+.container {
+	display: flex;
+	width: 100vw;
+}
+
+.account {
+	width: calc(50vw - 350px);
+	height: 100vh;
+	background: var(--shade);
+	position: fixed;
+	overflow-y: hidden;
+}
+
+.account .main {
+	border-bottom: 1px solid #999;
+}
+
+.account .main .name {
+	font-size: 3em;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 20px;
+	overflow: hidden;
+}
+
+.account .main .pfp {
+	height: 250px;
+}
+
+.account .main .pfp img {
+	height: 210px;
+	width: auto;
+	margin: 20px auto;
+	border-radius: 50%;
+}
+
+.account .main .name .edit {
+	float: right;
+}
+
+.account .sub {
+	height: calc(100vh - 350px);
+	overflow-y: scroll;
+}
+
+.account .sub > div {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	cursor: pointer;
+	transition: .25s all ease;
+}
+
+.account .sub .open {
+	float: right;
+	font-size: 2em;
+}
+
+.account .sub .age {
+	text-align: right;
+	font-style: italic;
+}
+
+.account .sub .arch:hover {
+	background: var(--hover);
+}
+
+.account .sub .own:hover {
+	background: var(--hover);
+}
+
+.account .main .pfp {
+	text-align: center;
+}
+
+.account .pref progress {
+	width: calc(100% - 40px);
+	height: 5px;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.feed {
+	background: var(--back);
+	width: 700px;
+	position: absolute;
+	top: 0;
+	left: calc(50vw - 350px);
+}
+
+.feed .empty {
+	display: none;
+}
+
+.feed .new {
+	position: fixed;
+	z-index: 100;
+	width: 700px;
+	height: 100px;
+	background: var(--shade);
+	display: flex;
+	justify-content: space-around;
+	top: 0;
+}
+
+.feed .new > div {
+	width: 25%;
+	height: 100px;
+	line-height: 100px;
+	font-size: 3em;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	top: -100%;
+	transition: .25s all ease;
+	background: transparent;
+	/*overflow: hidden;*/
+}
+
+.feed .bar {
+	position: relative;
+	margin-top: 95px;
+	z-index: 100;
+	flex-grow: 3;
+	display: none;
+}
+
+.feed .bar input {
+	height: 50px;
+	line-height: 50px;
+	border: 0;
+	outline: 0;
+	border-radius: 25px;
+	width: 85%;
+	padding: 0 25px;
+	font-size: .5em;
+	font-family: 'Roboto', sans-serif;
+}
+
+.new-search .bar {
+	display: block;
+}
+
+.new-search .add, .new-search .code, .new-search .term { display: none; }
+
+.feed .new div i {
+	position: relative;
+	z-index: 120;
+}
+
+.feed .new > div:hover {
+	color: var(--hover);
+}
+
+.feed .new > div .hover {
+	width: 100%;
+	height: 100%;
+	background: var(--text);
+	position: relative;
+	top: 0;
+	transition: .1s all ease;
+	/*z-index: -100;*/
+}
+
+.feed .new > div:hover .hover {
+	top: 100%;
+}
+
+.feed .empty {
+	width: 100%;
+	height: 500px;
+}
+
+.feed .empty .content {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	margin-top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	/*color: var(--shade);*/
+}
+
+.feed .empty .content .icon {
+	font-size: 5em;
+}
+
+.feed .empty .content .text {
+	font-size: 1.5em;
+}
+
+.posts {
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	height: calc(100vh - 100px);
+	overflow-y: scroll;
+}
+
+.post {
+	width: 680px;
+	margin: 10px;
+	background: var(--back);
+}
+
+.post .header {
+	width: 100%;
+	position: relative;
+	top: 0;
+	height: 50px;
+	display: flex;
+	background: var(--shade);
+}
+
+.post .header .icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	overflow: 50%;
+	margin: 5px;
+	float: left;
+}
+
+.post .header .icon img {
+	width: 40px;
+	height: 40px;
+}
+
+.post .header .name {
+	height: 50px;
+	width: calc(100% - 100px);
+}
+
+.post .header .username {
+	font-size: 1.3em;
+	margin-bottom: -3px;
+}
+
+.post .header .tags {
+	display: inline-block;
+	font-size: .8em;
+}
+
+.post .header .tags .tag {
+	display: inline-block;
+	color: #f00;
+	border-radius: 5px;
+	padding: 0 3px 0 0;
+	margin: 0 3px 0 0;
+}
+
+.post .header .archive {
+	float: right;
+	font-size: 1.6em;
+	line-height: 50px;
+	width: 50px;
+	text-align: center;
+	transition: .25s all ease;
+}
+
+.post .main {
+	width: 100%;
+	height: auto;
+	max-height: 400px;
+	overflow: hidden;
+}
+
+.post .main .view {
+	width: 100%;
+	height: auto;
+}
+
+.post .main .view img {
+	max-width: 100%;
+	max-height: 400px;
+	transform: translateX(-50%);
+	margin-left: calc(50%);
+}
+
+.post .footer {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	height: 50px;
+	background: var(--shade);
+}
+
+.post .footer div {
+	width: 25%;
+	height: 50px;
+	font-size: 1.6em;
+	line-height: 50px;
+	text-align: center;
+	transition: .25s all ease;
+	cursor: pointer;
+}
+
+.post .header div i, .post .header .icon, .post .header .username, .post .main .view {
+	cursor: pointer;
+}
+
+.extra {
+	width: calc(50vw - 350px);
+	height: 100vh;
+	background: var(--shade);
+	position: fixed;
+	right: 0;
+	overflow-y: hidden;
+}
+
+.extra .trending {
+	height: calc(100vh - 450px);
+	overflow-y: scroll;
+	border-bottom: 1px solid #999;
+}
+
+.extra .heading {
+	font-size: 1.7em;
+	overflow: hidden;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 20px;
+}
+
+.extra .trending .item {
+	padding: 20px;
+	font-size: 1.5em;
+	line-height: 50px;
+	transition: .25s all ease;
+	cursor: pointer;
+}
+
+.extra .trending .item img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: right;
+}
+
+.extra .trending .item:hover {
+	background: var(--hover);
+}
+
+.extra .events {
+	height: 250px;
+	width: auto;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	overflow-x: scroll;
+	display: flex;
+	padding-right: 10px;
+}
+
+.extra .events .item {
+	flex-shrink: 0;
+	width: 150px;
+	height: 230px;
+	color: #fff;
+	margin: 10px 0 10px 10px;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.extra .events .item .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(transparent, #000c);
+	z-index: 50;
+}
+
+.extra .events .item img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.extra .events .item .desc {
+	position: absolute;
+	bottom: 0;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 10px;
+	z-index: 60;
+}
+
+.extra .events .item .desc i {
+	color: #0f0;
+}
+
+.extra .fa-fire { color: #f93; }
+.plus-clicked { color: #0f6; }
+.minus-clicked { color: #f30; }
+.star-clicked { color: var(--star); }
+
+@media screen and (max-aspect-ratio: 1/1) {
+	body {
+		font-size: 2em;
+	}
+
+	.nav {
+		background: var(--shade);
+		position: fixed;
+		width: 100vw;
+		display: flex;
+		height: 200px;
+		line-height: 200px;
+		bottom: -10px;
+		/*left: 10px;*/
+		z-index: 100;
+		box-shadow: 0 5px 15px 5px var(--shadow);
+		font-size: 3em;
+	}
+
+	.nav div {
+		width: 33%;
+		text-align: center;
+	}
+
+	.container {
+		display: block;
+	}
+
+	.account {
+		width: 100vw;
+		/*left: 10px;*/
+	}
+
+	.account .main .name {
+		height: 200px;
+		line-height: 200px;
+		padding: 0 40px;
+	}
+
+	.account .main .pfp {
+		height: 500px;
+	}
+
+	.account .main .pfp img {
+		height: 480px;
+	}
+
+	.account .sub div {
+		height: 80px;
+		line-height: 80px;
+		font-size: 1.2em;
+	}
+
+	.extra {
+		position: absolute;
+		left: 0;
+		width: 100vw;
+		/*z-index: 80;*/
+	}
+
+	.extra .heading {
+		height: 200px;
+		line-height: 200px;
+	}
+
+	.extra .trending {
+		height: calc(100vh - 1100px);
+	}
+
+	.extra .trending .item {
+		height: 200px;
+		line-height: 200px;
+	}
+
+	.extra .trending .item img {
+		width: 200px;
+		height: 200px;
+	}
+
+	.extra .events {
+		height: 500px;
+		bottom: 200px;
+	}
+
+	.extra .events .item {
+		width: 300px;
+		height: 460px;
+		margin: 20px 0 20px 20px;
+		font-size: 1.2em;
+	}
+
+	.extra .events .item .desc {
+		height: 80px;
+		line-height: 80px;
+	}
+
+	.feed {
+		position: absolute;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		/*transform: translateX(0);*/
+		z-index: 80;
+	}
+
+	.feed .new {
+		height: 200px;
+		width: 100vw;
+		/*line-height: 200px;*/
+	}
+
+	.feed .new > div {
+		height: 200px;
+		top: 0;
+		line-height: 200px;
+
+	}
+
+	.feed .new > div .hover {
+		display: none;
+	}
+
+	.feed .bar {
+		margin-top: -20px;
+	}
+
+	.feed .bar input {
+		height: 100px;
+		line-height: 100px;
+		border-radius: 50px;
+		padding: 0 50px;
+		width: 80%;
+	}
+
+	.posts {
+		position: absolute;
+		top: 200px;
+		width: 100vw;
+		height: calc(100vh - 400px);
+		overflow-y: scroll;
+	}
+
+	.feed .post {
+		width: calc(100% - 20px);
+	}
+
+	.post .header {
+		height: 100px;
+		line-height: 100px;
+	}
+
+	.post .header .icon {
+		width: 100px;
+		height: 100px;
+	}
+
+	.post .header .icon img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.post .header .name {
+		height: 100px;
+	}
+
+	.post .header .name .username {
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: -25px;
+	}
+
+	.post .header .name .tags {
+		height: 50px;
+		line-height: 50px;
+	}
+
+	.post .header .archive {
+		width: 100px;
+		line-height: 100px;
+	}
+
+	.post .main {
+		max-height: 800px;
+	}
+
+	.post .main .view img {
+		max-height: 800px;
+	}
+
+	.post .footer {
+		height: 100px;
+		line-height: 100px;
+	}
+
+	.post .footer div {
+		height: 100px;
+		line-height: 100px;
+	}
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeIt</title>
+	<script src="https://use.fontawesome.com/175ed84f2f.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
+	<link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+	 --><script src="script.js"></script>
+	<script src="post.js"></script>
+	<script src="user.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="nav">
+		<div class="ac"><i class="fa fa-user"></i></div>
+		<div class="fd"><i class="fa fa-home"></i></div>
+		<div class="xt"><i class="fa fa-fire"></i></div>
+	</div>
+	<div class="container" ng-app="myApp" ng-controller="myCtrl">
+		<div class="account">
+			<div class="main">
+				<div class="name">Username
+					<div class="edit"><i class="fa fa-pencil"></i></div>
+				</div>
+				<div class="pfp">
+					<img src="https://bit.ly/2WQwgJo">
+				</div>
+			</div>
+			<div class="sub">
+				<div class="age">...been around for 324 days</div>
+				<div class="arch">Archives
+					<div class="open"><i class="fa fa-angle-right"></i></div>
+				</div>
+				<div class="own">My Posts
+					<div class="open"><i class="fa fa-angle-right"></i></div>
+				</div>
+				<div class="pref">Stats<br />
+					<progress value="100" max="100"></progress><br />
+					<progress value="80" max="100"></progress><br />
+					<progress value="60" max="100"></progress><br />
+					<progress value="50" max="100"></progress><br />
+					<progress value="40" max="100"></progress>
+				</div>
+			</div>
+		</div>
+		<div class="feed">
+			<div class="new">
+				<div class="bar">
+					<input type="text" name="search" placeholder="search posts ...">
+				</div>
+				<div class="add">
+					<div class="hover"></div>
+					<i class="fa fa-plus"></i>
+				</div>
+				<div class="code">
+					<div class="hover"></div>
+					<i class="fa fa-code"></i>
+				</div>
+				<div class="search">
+					<div class="hover"></div>
+					<i class="fa fa-search"></i>
+				</div>
+				<div class="term">
+					<div class="hover"></div>
+					<i class="fa fa-terminal"></i>
+				</div>
+			</div>
+			<div class="empty">
+				<div class="content">
+					<div class="icon">
+						🤦🏻‍
+					</div>
+					<div class="text">
+						nothing to see here...
+					</div>
+				</div>
+			</div>
+			<div class="posts">
+				<div class="post" ng-repeat="x in posts">
+					<div class="header">
+						<div class="icon">
+							<img ng-src="https://bit.ly/2WQwgJo" />
+						</div>
+						<div class="name">
+							<div class="username">abc</div>
+							<div class="tags">
+								<div class="tag">C++</div>
+							</div>
+						</div>
+						<div class="archive">
+							<i class="fa fa-star-o"></i>
+						</div>
+					</div>
+					<div class="main">
+						<div class="view">
+							<img ng-src="https://bit.ly/3bI3srK" />
+						</div>
+					</div>
+					<div class="footer">
+						<div class="plus">
+							<i class="fa fa-plus"></i>
+						</div>
+						<div class="minus">
+							<i class="fa fa-minus"></i>
+						</div>
+						<div class="comment">
+							<i class="fa fa-comment-o"></i>
+						</div>
+						<div class="share">
+							<i class="fa fa-share"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="extra">
+			<div class="heading">See what's trending <i class="fa fa-fire"></i> . . .</div>
+			<div class="trending">
+				<div class="item">Post 1
+					<img src="https://bit.ly/3cBMHjj">
+				</div>
+				<div class="item">Post 2
+					<img src="https://bit.ly/3cBMHjj">
+				</div>
+				<div class="item">Post 3
+					<img src="https://bit.ly/3cBMHjj">
+				</div>
+				<div class="item">Post 4
+					<img src="https://bit.ly/3cBMHjj">
+				</div>
+				<div class="item">Post 5
+					<img src="https://bit.ly/3cBMHjj">
+				</div>
+			</div>
+			<div class="heading">Events . . .</div>
+			<div class="events">
+				<div class="item">
+					<div class="overlay"></div>
+					<img src="https://bit.ly/3bG3SPw">
+					<div class="desc"><i class="fa fa-code"></i> Codevember</div>
+				</div>
+				<div class="item">
+					<div class="overlay"></div>
+					<img src="https://bit.ly/3bG3SPw">
+					<div class="desc"><i class="fa fa-code"></i> Codevember</div>
+				</div>
+				<div class="item">
+					<div class="overlay"></div>
+					<img src="https://bit.ly/3bG3SPw">
+					<div class="desc"><i class="fa fa-code"></i> Codevember</div>
+				</div>
+				<div class="item">
+					<div class="overlay"></div>
+					<img src="https://bit.ly/3bG3SPw">
+					<div class="desc"><i class="fa fa-code"></i> Codevember</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
