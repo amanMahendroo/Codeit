@@ -1,0 +1,143 @@
+/*:root {
+	--back: #eee;
+	--shade: #ddd;
+	--hover: #ccc;
+	--active: #bbb;
+	--text: #000;
+}*/
+
+:root {
+	--back: #000;
+	--shade: #111;
+	--hover: #222;
+	--active: #333;
+	--text: #fff;
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+}
+
+.code {
+	width: 50%;
+	color: var(--text);
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.code .htm, .code .css, .code .js {
+	font-family: Courier new;
+	width: calc(50% - 20px);
+	height: calc(100% - 50px);
+	position: absolute;
+	bottom: 0;
+	background: var(--back);
+	padding: 0 10px;
+	line-height: 30px;
+	outline: none;
+	overflow-y: scroll;
+}
+
+.buttons {
+	background: var(--shade);
+	height: 50px;
+	user-select: none;
+}
+
+.buttons div {
+	display: inline-block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	width: 150px;
+	text-align: center;
+	cursor: pointer;
+	transition: .25s all ease;
+	font-style: italic;
+}
+
+.buttons div:hover {
+	background: var(--hover);
+}
+
+.buttons .active {
+	background: var(--active);
+}
+
+.buttons .view {
+	position: absolute;
+	right: 50%;
+	width: 75px;
+	display: flex;
+	overflow: hidden;
+	transition: .25s all ease;
+	clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+	font-size: 1.2em;
+}
+
+.buttons .options {
+	width: 0;
+	overflow: hidden;
+	display: flex;
+	flex-shrink: 0;
+}
+
+.buttons .opened {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	width: 300px;
+}
+
+.buttons .opened .options {
+	width: 225px;
+	float: right;
+}
+
+.output {
+	width: 50%;
+	background: #eee;
+}
+
+.output .view {
+	display: block;
+	background: #fff;
+	margin: auto;
+	transition: .25s all ease;
+	border: 0;
+	outline: 0;
+}
+
+.editor .view {
+	width: 100%;
+	height: 100%;
+}
+
+.phone .view {
+	box-shadow: 5px 5px 15px 5px #0002;
+	height: 96vh;
+	width: 54vh;
+	margin-top: 2vh;
+}
+
+.full {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.full .view {
+	width: 100%;
+	height: 100%;
+}
+
