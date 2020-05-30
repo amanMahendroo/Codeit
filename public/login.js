@@ -9,10 +9,6 @@ $(document).ready(function () {
 		$('.first').css('display', 'block')
 		$('.second').css('display', 'none')
 	})
-
-	$('.facebook, .google, .submit').click(function () {
-		window.location.href = "./index.svelte"
-	})
 })
 
 function colors() {
