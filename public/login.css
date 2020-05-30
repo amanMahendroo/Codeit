@@ -8,6 +8,10 @@
 	--theme2: #090e47;
 }
 
+main {
+	user-select: none;
+}
+
 .panel {
 	width: 40vw;
 	height: calc(100vh + 8px);
@@ -306,6 +310,9 @@ input#email:valid {
 		width: 100vw;
 	}
 
+	.logins span {
+		display: none;
+	}
 
 	.first input {
 		height: 30px;
