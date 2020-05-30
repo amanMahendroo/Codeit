@@ -1,15 +1,34 @@
 <script>
 
+	import { Router, Link, Route, navigate } from "svelte-routing";
+	import Index from "./Index/Index.svelte";
+	import WebEditor from "./WebEditor/WebEditor.svelte";
+	import Editor from "./Editor/Editor.svelte";
+
+	export let url = "";
+
+	// --------------------------------------
+
+	function login() {
+		return Promise.resolve()
+	}
+
+	function goToIndex() {
+		login().then(() => {
+			navigate("Index/Index.svelte", { replace: true });
+		});
+	}
+
 	let strength = 0
 	let validations = []
 
 	function validatePassword(e) {
 		const password = e.target.value
 		validations = [
-			(password.length > 7),
-			((password.search(/[A-Z]/) > -1) && (password.search(/[a-z]/) > -1)),
-			(password.search(/[0-9]/) > -1),
-			(password.search(/[$&+,:;=?@#]/) > -1)
+		(password.length > 7),
+		((password.search(/[A-Z]/) > -1) && (password.search(/[a-z]/) > -1)),
+		(password.search(/[0-9]/) > -1),
+		(password.search(/[!@#$%^&*()-_;:'",.<>/?\\|`~/*-+]/) > -1)
 		]
 
 		strength = validations.reduce((acc, cur) => acc + cur)
@@ -37,12 +56,12 @@
 				<div class="logins">
 					<input type="email" name="username" placeholder="E-mail" spellcheck="false" id="email"><br>
 					<input type="password" name="password" placeholder="Password">
-					<div class="submit">Login</div>
-					<div class="facebook">
-						Login with facebook
+					<div class="submit" on:click={goToIndex}>Login</div>
+					<div class="facebook" on:click={goToIndex}>
+						<span>Login with</span> Facebook
 					</div>
-					<div class="google">
-						Login with Google
+					<div class="google" on:click={goToIndex}>
+						<span>Login with</span> Google
 					</div>
 				</div>
 				<div class="register">
@@ -72,12 +91,23 @@
 						
 					</ul>
 				</div>
-				<div class="submit">Sign Up</div>
+				<div class="submit" on:click={goToIndex}>Sign Up</div>
 			</div>
 		</div>
 	</div>
 </main>
 
 <style>
-
 </style>
+
+<Router url="{url}">
+	<!-- <nav>
+		<Link to="/">Login</Link>
+		<Link to="Index">Index</Link>
+		<Link to="WebEditor">Editor</Link>
+	</nav>
+	<div>
+		<Route path="WebEditor" component="{WebEditor}" />
+		<Route path="Index" component="{Index}" />
+	</div> -->
+</Router>
